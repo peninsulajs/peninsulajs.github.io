@@ -1,0 +1,39 @@
+{
+  "name": "peninsulajs.github.io",
+  "version": "1.0.0",
+  "description": "The Website for the PeninsulaJS Meetup",
+  "main": "index.js",
+  "config": {
+    "css": "src/css/*.css"
+  },
+  "scripts": {
+    "dev": "npm-run-all --parallel serve watch",
+    "serve": "simple-server . 3000",
+    "watch": "onchange $npm_package_config_css -- npm run build",
+    "build": "npm-run-all --parallel build:*",
+    "build:css": "postcss --use autoprefixer $npm_package_config_css -d media/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peninsulajs/peninsulajs.github.io.git"
+  },
+  "keywords": [
+    "meetup",
+    "js",
+    "peninsula"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peninsulajs/peninsulajs.github.io/issues"
+  },
+  "homepage": "https://github.com/peninsulajs/peninsulajs.github.io#readme",
+  "dependencies": {
+    "autoprefixer": "^6.2.1",
+    "npm-run-all": "^1.4.0",
+    "onchange": "^2.0.0",
+    "postcss-cli": "^2.3.2",
+    "simple-server": "^1.0.1"
+  }
+}
