@@ -49,7 +49,23 @@ article {
   padding-bottom: 3rem;
 }
 
+.actions {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 .button {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   background: #000;
   border-radius: 2em;
   border: 0 none;
@@ -62,6 +78,24 @@ article {
   text-align: center;
 }
 
+.button + .button {
+  margin-left: 1em;
+}
+
+@media (max-width: 400px) {
+  .actions {
+    display: block;
+  }
+  .actions .button {
+    display: block;
+  }
+
+  .button + .button {
+    margin-left: 0;
+  }
+}
+
+
 .button:link, .button:active, .button:visited {
   color: #f7df1e;
   text-decoration: none;
@@ -69,6 +103,17 @@ article {
 
 .button:hover {
   background: #444;
+}
+
+a:link,
+a:active {
+  color: #000;
+}
+a:visited {
+  color: #444;
+}
+a:hover {
+  color: #888;
 }
 
 dl div {
@@ -95,10 +140,50 @@ h1 {
   border-bottom: .2em solid black;
 }
 
-
 .header {
   padding-top: 1em;
   text-align: center;
+  position: relative;
+}
+
+.speakers {
+  list-style-type: none;
+  padding-left: 1.6em;
+}
+.speakers li {
+  position: relative;
+  margin: .25em 0;
+}
+.speakers li:before {
+  content: '';
+  top: 0;
+  bottom: .2em;
+  left: -1.3em;
+  margin: auto;
+  height: .7em;
+  width: .7em;
+  border-radius: 1em;
+  background: #000;
+  display: block;
+  position: absolute;
+}
+
+.submit {
+  font-style: italic;
+}
+
+.speaker {
+  font-weight: bold;
+}
+
+.event header img {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.event h2 {
+  font-style: italic;
 }
 
 .header h1 {
